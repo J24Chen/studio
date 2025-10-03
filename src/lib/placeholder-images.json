@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "sapphire-brooch",
+      "description": "A beautiful brooch that hums with magical energy.",
+      "imageUrl": "https://images.unsplash.com/photo-1758995115842-e90d363a640c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2FwcGhpcmUlMjBicm9vY2h8ZW58MHx8fHwxNzU5NTAyNzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sapphire brooch"
+    },
+    {
+      "id": "ruby-ring",
+      "description": "A ring that glows with an inner fire.",
+      "imageUrl": "https://images.unsplash.com/photo-1667013878745-e95d52596ab4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxydWJ5JTIwcmluZ3xlbnwwfHx8fDE3NTk0MDU1OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ruby ring"
+    },
+    {
+      "id": "swift-boots",
+      "description": "These boots feel lighter than air.",
+      "imageUrl": "https://images.unsplash.com/photo-1725709226193-4eb220c5f490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzd2lmdCUyMGJvb3RzfGVufDB8fHx8MTc1OTUwMjc0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "swift boots"
+    },
+    {
+      "id": "ancient-tome",
+      "description": "A book filled with forgotten incantations.",
+      "imageUrl": "https://images.unsplash.com/photo-1559466851-47d3cc0872ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhbmNpZW50JTIwdG9tZXxlbnwwfHx8fDE3NTk1MDI3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ancient tome"
+    },
+    {
+      "id": "berserkers-greataxe",
+      "description": "An axe that seems to hunger for battle.",
+      "imageUrl": "https://images.unsplash.com/photo-1568223449564-225bdd9df8ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxncmVhdGF4ZSUyMGJhdHRsZXxlbnwwfHx8fDE3NTk1MDI3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "greataxe battle"
+    },
+    {
+      "id": "moon-glaive",
+      "description": "A silent weapon that strikes like moonlight.",
+      "imageUrl": "https://images.unsplash.com/photo-1679623319671-1cd0cf687266?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb29uJTIwZ2xhaXZlfGVufDB8fHx8MTc1OTUwMjc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "moon glaive"
+    },
+    {
+      "id": "cursed-idol",
+      "description": "A unsettling idol that whispers promises of power.",
+      "imageUrl": "https://images.unsplash.com/photo-1672865016783-a6b414766f9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjdXJzZWQlMjBpZG9sfGVufDB8fHx8MTc1OTUwMjc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cursed idol"
+    },
+    {
+      "id": "leather-armor",
+      "description": "Simple but effective protection.",
+      "imageUrl": "https://images.unsplash.com/photo-1714680227679-00243d65e165?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsZWF0aGVyJTIwYXJtb3J8ZW58MHx8fHwxNzU5NTAyNzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather armor"
+    },
+    {
+      "id": "mages-circlet",
+      "description": "A circlet that focuses arcane energies.",
+      "imageUrl": "https://images.unsplash.com/photo-1602369094252-2b3f98e85bb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYWdlJTIwY2lyY2xldHxlbnwwfHx8fDE3NTk1MDI3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mage circlet"
+    },
+    {
+      "id": "longbow",
+      "description": "A standard issue longbow for archers.",
+      "imageUrl": "https://images.unsplash.com/photo-1519074031893-210d39bd3885?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb25nYm93fGVufDB8fHx8MTc1OTUwMjc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "longbow"
+    }
+  ]
 }

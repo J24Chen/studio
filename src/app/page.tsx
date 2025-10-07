@@ -28,11 +28,9 @@ export default function ItemsPage() {
       );
     }
 
+    // Class filtering logic will be added later
     if (selectedClass !== 'all') {
-      // This is a simplified filtering logic.
-      // A more complex implementation would require mapping items to classes.
-      // For now, we'll just show all items as class filtering isn't defined in the data.
-      // We can add this logic if the data model supports it.
+      // Placeholder for class filtering
     }
 
     return filtered;
@@ -51,10 +49,10 @@ export default function ItemsPage() {
         )}
       </div>
       <div className="flex-1 p-8 overflow-y-auto">
-        <div className="mb-4">
-          <h1 className="text-3xl font-bold">THE BINDING OF ISAAC: REPENTANCE</h1>
-          <p className="text-lg text-muted-foreground">REPENTANCE ITEMS ({filteredItems.length})</p>
-        </div>
+        <header className="mb-4">
+          <h1 className="text-3xl font-bold">RABBIT & STEEL</h1>
+          <p className="text-lg text-muted-foreground">ITEM BROWSER ({filteredItems.length})</p>
+        </header>
          <div className="flex gap-4 mb-6">
           <Input
             type="text"

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: 'Rabbit & Steel Companion',
@@ -36,7 +35,6 @@ export default function RootLayout({
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
-          <Footer />
         </div>
       </body>
     </html>

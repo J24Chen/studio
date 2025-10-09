@@ -61,7 +61,7 @@ export default function ItemsPage() {
 
   return (
     <div className="flex h-screen bg-[#1e1e1e] text-white">
-      <div className="hidden [@media(min-width:600px)]:flex w-[350px] flex-shrink-0 bg-[#121212] p-6 overflow-y-auto flex-col">
+      <div className="hidden [@media(min-width:600px)]:flex w-[250px] flex-shrink-0 bg-[#121212] p-6 overflow-y-auto flex-col">
         {hoveredItem ? (
           <ItemDetails item={hoveredItem} />
         ) : (

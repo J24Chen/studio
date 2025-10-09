@@ -11,8 +11,8 @@ export function ItemCard({ item }: ItemCardProps) {
       <Image
         src={item.imageUrl}
         alt={item.name}
-        width={64}
-        height={64}
+        width={50}
+        height={50}
         className="object-contain w-full aspect-square"
         data-ai-hint={`${item.name.toLowerCase()}`}
       />

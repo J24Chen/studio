@@ -12,15 +12,16 @@ interface ItemGridProps {
 export function ItemGrid({ items, onHoverItem, onClickItem }: ItemGridProps) {
   return (
     <div
-      className="grid grid-cols-8 md:grid-cols-10 lg:grid-cols-12 xl:grid-cols-16 gap-2"
+      className="grid gap-2"
+      style={{ gridTemplateColumns: 'repeat(auto-fit, 50px)' }}
       onMouseLeave={() => onHoverItem(null)}
     >
       {items.map((item) => (
-        <div 
-          key={item.id} 
+        <div
+          key={item.id}
           onMouseEnter={() => onHoverItem(item)}
           onClick={() => onClickItem(item)}
-          className="cursor-pointer"
+          className="cursor-pointer w-[50px] h-[50px]"
         >
           <ItemCard item={item} />
         </div>

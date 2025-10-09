@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { items, gameClasses, classTiers } from '@/lib/data';
+import { items, gameClasses } from '@/lib/data';
 import type { Item, Tier } from '@/lib/types';
 import { ItemGrid } from './_components/item-grid';
 import { ItemDetails } from './_components/item-details';
@@ -38,17 +38,14 @@ export default function ItemsPage() {
   }, [searchTerm]);
 
   const tieredItems: { [key in Tier]?: Item[] } = useMemo(() => {
-    if (selectedClass === 'all' || !classTiers[selectedClass]) {
+    if (selectedClass === 'all') {
       return {};
     }
-
-    const tiers = classTiers[selectedClass];
-    if (!tiers) return {};
-
+  
     const grouped: { [key in Tier]?: Item[] } = {};
-
+  
     for (const item of filteredItems) {
-      const tier = tiers[item.id];
+      const tier = item.tiers?.[selectedClass];
       if (tier) {
         if (!grouped[tier]) {
           grouped[tier] = [];
@@ -61,7 +58,7 @@ export default function ItemsPage() {
 
   return (
     <div className="flex h-screen bg-[#1e1e1e] text-white">
-      <div className="hidden [@media(min-width:650px)]:flex w-[350px] flex-shrink-0 bg-[#121212] p-6 overflow-y-auto flex-col">
+      <div className="hidden [@media(min-width:600px)]:flex w-[250px] flex-shrink-0 bg-[#121212] p-6 overflow-y-auto flex-col">
         {hoveredItem ? (
           <ItemDetails item={hoveredItem} />
         ) : (

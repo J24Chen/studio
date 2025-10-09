@@ -4,6 +4,9 @@ export interface Item {
   description: string;
   category: 'Common' | 'Rare' | 'Legendary' | 'Cursed';
   imageUrl: string;
+  tiers?: {
+    [classId: string]: Tier;
+  };
 }
 
 export interface GameClass {

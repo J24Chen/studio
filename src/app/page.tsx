@@ -61,7 +61,7 @@ export default function ItemsPage() {
 
   return (
     <div className="flex h-screen bg-[#1e1e1e] text-white">
-      <div className="hidden [@media(min-width:600px)]:flex w-[250px] flex-shrink-0 bg-[#121212] p-6 overflow-y-auto flex-col">
+      <div className="hidden [@media(min-width:650px)]:flex w-[250px] flex-shrink-0 bg-[#121212] p-6 overflow-y-auto flex-col">
         {hoveredItem ? (
           <ItemDetails item={hoveredItem} />
         ) : (
@@ -71,7 +71,7 @@ export default function ItemsPage() {
         )}
       </div>
       <div className="flex-1 p-8 overflow-y-auto">
-        <header className="mb-4">
+        <header className="mb-4 text-center">
           <h1 className="text-3xl font-bold">RABBIT & STEEL</h1>
           <p className="text-lg text-muted-foreground">ITEM BROWSER ({filteredItems.length})</p>
         </header>

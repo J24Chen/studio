@@ -53,10 +53,6 @@ export function ItemDetails({ item }: ItemDetailsProps) {
 
       <hr className="border-gray-600" />
       
-      <div className="text-xs text-muted-foreground pt-2">
-        <p>TYPE: {item.category.toUpperCase()}</p>
-      </div>
-
       <div className="space-y-2">
         <h3 className="font-bold text-base text-gray-300">Class Tiers:</h3>
         <div className="grid grid-cols-3 gap-x-4 gap-y-2 text-xs">

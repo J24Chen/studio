@@ -81,7 +81,7 @@ export default function ItemsPage() {
             placeholder="Search for an item..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-[#2a2a2a] border-gray-600 text-white"
+            className="bg-[#2a2a2a] border-gray-600 text-white min-w-[160px]"
           />
           <Select onValueChange={setSelectedClass} defaultValue="all">
             <SelectTrigger className="w-[200px] bg-[#2a2a2a] border-gray-600 text-white">

@@ -20,7 +20,6 @@ export function ItemDetails({ item }: ItemDetailsProps) {
       <h2 className="text-2xl font-bold text-yellow-300 underline">{item.name.toUpperCase()}</h2>
       <p className="text-base italic text-gray-400">"{item.description}"</p>
       <div className='flex items-center gap-2'>
-        <p className="text-base text-gray-300">Quality: {Math.round(item.rating)}</p>
          <Badge
             className={cn(
               'w-fit text-white',
@@ -31,10 +30,6 @@ export function ItemDetails({ item }: ItemDetailsProps) {
           </Badge>
       </div>
 
-      <div className="space-y-3 text-base text-gray-300 py-4">
-        {item.stats.split('.').map((stat, index) => stat && <p key={index}>{stat.trim()}.</p>)}
-      </div>
-      
       <hr className="border-gray-600" />
       
       <div className="text-xs text-muted-foreground pt-2">

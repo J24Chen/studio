@@ -18,6 +18,16 @@ import {
   DialogContent,
 } from '@/components/ui/dialog';
 import { Tiers } from '@/lib/types';
+import { cn } from '@/lib/utils';
+
+const tierColors: { [key: string]: string } = {
+  S: 'text-red-500',
+  A: 'text-orange-400',
+  B: 'text-yellow-400',
+  C: 'text-green-400',
+  D: 'text-blue-400',
+  F: 'text-gray-500',
+};
 
 export default function ItemsPage() {
   const [hoveredItem, setHoveredItem] = useState<Item | null>(null);
@@ -102,7 +112,7 @@ export default function ItemsPage() {
                 <div key={tier}>
                   <div className="flex items-center gap-4 my-4">
                     <div className="flex-1 border-t border-gray-600"></div>
-                    <h2 className="text-3xl font-bold text-primary">{tier}</h2>
+                    <h2 className={cn('text-3xl font-bold', tierColors[tier])}>{tier}</h2>
                     <div className="flex-1 border-t border-gray-600"></div>
                   </div>
                   <ItemGrid items={tieredItems[tier]!} onHoverItem={setHoveredItem} onClickItem={setInspectedItem} />

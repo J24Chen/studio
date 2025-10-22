@@ -32,6 +32,7 @@ const tierColors: { [key: string]: string } = {
 
 export default function ItemsPage() {
   const [inspectedItem, setInspectedItem] = useState<Item | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<Item | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClass, setSelectedClass] = useState<string>('all');
 
@@ -68,6 +69,10 @@ export default function ItemsPage() {
 
   return (
     <div className="flex h-screen bg-[#1e1e1e] text-white">
+      <div className="w-80 p-4 border-r border-gray-700 bg-[#121212] overflow-y-auto">
+        <h2 className="text-xl font-bold mb-4">Item Details</h2>
+        {hoveredItem ? <ItemDetails item={hoveredItem} /> : <div className="text-gray-500 text-sm">Hover over an item to see its details.</div>}
+      </div>
       <div className="flex-1 p-8 overflow-y-auto">
         <header className="mb-4 text-center">
           <h1 className="text-3xl font-bold">RABBIT & STEEL</h1>
@@ -106,7 +111,7 @@ export default function ItemsPage() {
                     <h2 className={cn('text-3xl font-bold', tierColors[tier])}>{tier}</h2>
                     <div className="flex-1 border-t border-gray-600"></div>
                   </div>
-                  <ItemGrid items={tieredItems[tier]!} onClickItem={setInspectedItem} />
+                  <ItemGrid items={tieredItems[tier]!} onHoverItem={setHoveredItem} onClickItem={setInspectedItem} />
                 </div>
               )
             ))}
@@ -114,7 +119,7 @@ export default function ItemsPage() {
         ) : (
           <div>
             <hr className="border-gray-600 mb-6" />
-            <ItemGrid items={filteredItems} onClickItem={setInspectedItem} />
+            <ItemGrid items={filteredItems} onHoverItem={setHoveredItem} onClickItem={setInspectedItem} />
           </div>
         )}
 
@@ -122,15 +127,6 @@ export default function ItemsPage() {
       <Dialog open={!!inspectedItem} onOpenChange={(open) => !open && setInspectedItem(null)}>
         <DialogContent className="bg-[#121212] border-gray-700 text-white max-w-sm">
           {inspectedItem && <ItemDetails item={inspectedItem} />}
-          <div className="relative w-16 h-16">
-            <Image
-              src="https://static.wikitide.net/rnswiki/thumb/8/85/Spr_item_arcane_1.png/40px-Spr_item_arcane_1.png"
-              alt="Test Image"
-              fill
-              sizes="64px"
-              className="object-contain"
-            />
-          </div>
         </DialogContent>
       </Dialog>
     </div>

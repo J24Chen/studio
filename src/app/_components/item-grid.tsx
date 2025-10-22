@@ -5,10 +5,11 @@ import type { Item } from '@/lib/types';
 
 interface ItemGridProps {
   items: Item[];
+  onHoverItem: (item: Item) => void;
   onClickItem: (item: Item) => void;
 }
 
-export function ItemGrid({ items, onClickItem }: ItemGridProps) {
+export function ItemGrid({ items, onHoverItem, onClickItem }: ItemGridProps) {
   return (
     <div
       className="grid gap-2"
@@ -17,6 +18,7 @@ export function ItemGrid({ items, onClickItem }: ItemGridProps) {
       {items.map((item) => (
         <div
           key={item.name}
+          onMouseEnter={() => onHoverItem(item)}
           onClick={() => onClickItem(item)}
           className="cursor-pointer"
         >

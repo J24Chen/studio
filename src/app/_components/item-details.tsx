@@ -22,6 +22,15 @@ export function ItemDetails({ item }: ItemDetailsProps) {
       <div className="flex justify-between items-start">
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-yellow-300 underline">{item.name.toUpperCase()}</h2>
+          <div className="relative w-16 h-16">
+            <Image
+              src="https://static.wikitide.net/rnswiki/thumb/8/85/Spr_item_arcane_1.png/40px-Spr_item_arcane_1.png"
+              alt="Test Image"
+              fill
+              sizes="64px"
+              className="object-contain"
+            />
+          </div>
         </div>
         <div className="relative w-16 h-16 rounded-md overflow-hidden border border-gray-600">
           <Image

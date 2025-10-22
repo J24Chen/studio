@@ -64,6 +64,10 @@ export const gameClasses: GameClass[] = [
 ];
 
 export const items: Item[] = [
+
+  {"name": "Raven Grimoire", "description": "Your Special applies Curse Afflicted enemies take 10% extra damage. Duration : 5 seconds .", "category": "Arcane Set", "imageUrl": "https://static.wikitide.net/rnswiki/thumb/6/6f/Spr_item_arcane_0.png/40px-Spr_item_arcane_0.png", "tiers": {"wizard": "NA", "druid": "NA", "spellsword": "NA", "assassin": "NA", "heavyblade": "NA", "dancer": "NA", "sniper": "NA", "bruiser": "NA", "defender": "NA", "ancient": "NA"}},
+  {"name": "Blackwing Staff", "description": "Your Primary applies Curse Afflicted enemies take 10% extra damage. Duration : 5 seconds .", "category": "Arcane Set", "imageUrl": "https://static.wikitide.net/rnswiki/thumb/8/85/Spr_item_arcane_1.png/40px-Spr_item_arcane_1.png", "tiers": {"wizard": "NA", "druid": "NA", "spellsword": "NA", "assassin": "NA", "heavyblade": "NA", "dancer": "NA", "sniper": "NA", "bruiser": "NA", "defender": "NA", "ancient": "NA"}},
+
   {
     id: 'sapphire-brooch',
     name: 'Sapphire Brooch',

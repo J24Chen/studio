@@ -1,8 +1,6 @@
 export interface Item {
-  id: string;
   name: string;
   description: string;
-  category: 'Common' | 'Rare' | 'Legendary' | 'Cursed';
   imageUrl: string;
   tiers?: {
     [classId: string]: Tier;

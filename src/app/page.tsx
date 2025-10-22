@@ -36,7 +36,7 @@ export default function ItemsPage() {
   const [selectedClass, setSelectedClass] = useState<string>('all');
 
   const filteredItems = useMemo(() => {
-    let filtered = [...items].sort((a, b) => a.name.localeCompare(b.name));
+    let filtered = [...items];
 
     if (searchTerm) {
       filtered = filtered.filter((item) =>

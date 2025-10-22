@@ -18,7 +18,7 @@ export function ItemGrid({ items, onHoverItem, onClickItem }: ItemGridProps) {
     >
       {items.map((item) => (
         <div
-          key={item.id}
+          key={item.name}
           onMouseEnter={() => onHoverItem(item)}
           onClick={() => onClickItem(item)}
           className="cursor-pointer w-[50px] h-[50px]"

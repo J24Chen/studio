@@ -34,6 +34,15 @@ export function ItemDetails({ item }: ItemDetailsProps) {
           />
         </div>
       </div>
+      <div className="relative w-16 h-16">
+        <Image
+          src="https://static.wikitide.net/rnswiki/thumb/8/85/Spr_item_arcane_1.png/40px-Spr_item_arcane_1.png"
+          alt="Test Image"
+          fill
+          sizes="64px"
+          className="object-contain"
+        />
+      </div>
       <p className="text-base italic text-gray-400">"{item.description}"</p>
 
       <hr className="border-gray-600" />

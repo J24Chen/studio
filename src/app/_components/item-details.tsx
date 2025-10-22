@@ -23,14 +23,16 @@ export function ItemDetails({ item }: ItemDetailsProps) {
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-yellow-300 underline">{item.name.toUpperCase()}</h2>
         </div>
-        <Image
-          src={item.imageUrl}
-          alt={item.name}
-          width={64}
-          height={64}
-          className="rounded-md object-contain border border-gray-600"
-          data-ai-hint={`${item.name.toLowerCase()}`}
-        />
+        <div className="relative w-16 h-16 rounded-md overflow-hidden border border-gray-600">
+          <Image
+            src={item.imageUrl}
+            alt={item.name}
+            fill
+            sizes="64px"
+            className="object-contain"
+            data-ai-hint={`${item.name.toLowerCase()}`}
+          />
+        </div>
       </div>
       <p className="text-base italic text-gray-400">"{item.description}"</p>
 

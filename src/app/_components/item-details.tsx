@@ -1,6 +1,5 @@
 import type { Item } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { gameClasses } from '@/lib/data';
 
 interface ItemDetailsProps {
@@ -24,12 +23,13 @@ export function ItemDetails({ item }: ItemDetailsProps) {
           <h2 className="text-2xl font-bold text-yellow-300 underline">{item.name.toUpperCase()}</h2>
         </div>
         <div className="relative w-16 h-16 rounded-md overflow-hidden border border-gray-600">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={item.imageUrl}
             alt={item.name}
-            fill
-            sizes="64px"
-            className="object-contain"
+            width="64"
+            height="64"
+            className="object-contain w-full h-full"
             data-ai-hint={`${item.name.toLowerCase()}`}
           />
         </div>

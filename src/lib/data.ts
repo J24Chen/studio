@@ -3005,7 +3005,7 @@ export const items: Item[] =
 			"druid": "B",
 			"spellsword": "A",
 			"sniper": "B",
-			"bruiser": "F",
+			"bruiser": "A",
 			"defender": "B",
 			"ancient": "B",
         }

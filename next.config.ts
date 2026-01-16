@@ -2,7 +2,7 @@ import type {NextConfig} from 'next';
 
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 // IMPORTANT: Change this to the name of your GitHub repository
-const repo = 'rabbit-and-steel-item-browser';
+const repo = 'rns-companion';
 
 const nextConfig: NextConfig = {
   output: 'export',

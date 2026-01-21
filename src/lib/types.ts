@@ -1,4 +1,3 @@
-
 export interface Item {
   name: string;
   description: string;
@@ -28,3 +27,14 @@ export type ClassTierList = {
     [itemId: string]: Tier;
   };
 };
+
+export interface Gem {
+  name: string;
+  imageUrl: string;
+  details: {
+    [classId: string]: {
+      description: string;
+      tier: Tier;
+    };
+  };
+}

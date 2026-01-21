@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import { Header } from '@/components/layout/header';
 
 export const metadata: Metadata = {
-  title: 'Item Explorer',
+  title: 'Rabbit & Steel Companion',
   description: 'Companion app for the game Rabbit & Steel',
 };
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         )}
       >
         <div className="relative flex min-h-screen flex-col">
+          <Header />
           <main className="flex-1">{children}</main>
         </div>
         <Toaster />

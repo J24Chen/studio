@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { items, gameClasses } from '@/lib/data';
+import { items } from '@/lib/items';
+import { gameClasses } from '@/lib/data';
 import type { Item, Tier } from '@/lib/types';
 import { ItemGrid } from './_components/item-grid';
 import { ItemDetails } from './_components/item-details';

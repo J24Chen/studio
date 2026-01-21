@@ -1,7 +1,7 @@
-import type { Item } from '@/lib/types';
+import type { Item, Gem } from '@/lib/types';
 
 interface ItemCardProps {
-  item: Item;
+  item: Item | Gem;
 }
 
 export function ItemCard({ item }: ItemCardProps) {
@@ -14,7 +14,7 @@ export function ItemCard({ item }: ItemCardProps) {
         width="50"
         height="50"
         className="object-contain w-full h-full"
-        data-ai-hint={`${item.name.toLowerCase()}`}
+        data-ai-hint={'details' in item ? 'gem' : item.name.toLowerCase()}
       />
     </div>
   );

@@ -4,8 +4,8 @@ import { useState, useMemo } from 'react';
 import { gems } from '@/lib/gems';
 import { gameClasses } from '@/lib/data';
 import type { Gem, Tier } from '@/lib/types';
-import { GemGrid } from './_components/gem-grid';
-import { GemDetails } from './_components/gem-details';
+import { ItemGrid } from '../_components/item-grid';
+import { ItemDetails } from '../_components/item-details';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -31,12 +31,12 @@ const tierColors: { [key: string]: string } = {
 };
 
 export default function GemsPage() {
-  const [inspectedGem, setInspectedGem] = useState<Gem | null>(null);
-  const [hoveredGem, setHoveredGem] = useState<Gem | null>(null);
+  const [inspectedItem, setInspectedItem] = useState<Gem | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<Gem | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClass, setSelectedClass] = useState<string>('wizard'); // Default to wizard
 
-  const filteredGems = useMemo(() => {
+  const filteredItems = useMemo(() => {
     let filtered = [...gems].sort((a, b) => a.name.localeCompare(b.name));
 
     if (searchTerm) {
@@ -48,10 +48,10 @@ export default function GemsPage() {
     return filtered;
   }, [searchTerm]);
 
-  const tieredGems: { [key in Tier]?: Gem[] } = useMemo(() => {
+  const tieredItems: { [key in Tier]?: Gem[] } = useMemo(() => {
     const grouped: { [key in Tier]?: Gem[] } = {};
   
-    for (const gem of filteredGems) {
+    for (const gem of filteredItems) {
       const tier = gem.details[selectedClass]?.tier;
       if (tier) {
         if (!grouped[tier]) {
@@ -61,18 +61,18 @@ export default function GemsPage() {
       }
     }
     return grouped;
-  }, [selectedClass, filteredGems]);
+  }, [selectedClass, filteredItems]);
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)] bg-[#1e1e1e] text-white">
       <div className="w-80 p-4 border-r border-gray-700 bg-[#121212] overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">Gem Details</h2>
-        {hoveredGem ? <GemDetails gem={hoveredGem} classId={selectedClass} /> : <div className="text-gray-500 text-sm">Hover over a gem to see its details.</div>}
+        {hoveredItem ? <ItemDetails item={hoveredItem} classId={selectedClass} /> : <div className="text-gray-500 text-sm">Hover over a gem to see its details.</div>}
       </div>
       <div className="flex-1 p-8 overflow-y-auto">
         <header className="mb-4 text-center">
           <h1 className="text-3xl font-bold">RABBIT & STEEL</h1>
-          <p className="text-lg text-muted-foreground">GEM BROWSER ({filteredGems.length})</p>
+          <p className="text-lg text-muted-foreground">GEM BROWSER ({filteredItems.length})</p>
         </header>
          <div className="flex gap-4 mb-6">
           <Input
@@ -97,24 +97,24 @@ export default function GemsPage() {
         </div>
         
         <div className="space-y-4">
-          {(Object.keys(tieredGems) as Tier[]).sort((a, b) => Tiers.indexOf(a) - Tiers.indexOf(b)).map((tier) => (
-            tieredGems[tier] && tieredGems[tier]!.length > 0 && (
+          {(Object.keys(tieredItems) as Tier[]).sort((a, b) => Tiers.indexOf(a) - Tiers.indexOf(b)).map((tier) => (
+            tieredItems[tier] && tieredItems[tier]!.length > 0 && (
               <div key={tier}>
                 <div className="flex items-center gap-4 my-4">
                   <div className="flex-1 border-t border-gray-600"></div>
                   <h2 className={cn('text-3xl font-bold', tierColors[tier])}>{tier}</h2>
                   <div className="flex-1 border-t border-gray-600"></div>
                 </div>
-                <GemGrid gems={tieredGems[tier]!} onHoverGem={setHoveredGem} onClickGem={setInspectedGem} />
+                <ItemGrid items={tieredItems[tier]!} onHoverItem={setHoveredItem} onClickItem={setInspectedItem} />
               </div>
             )
           ))}
         </div>
 
       </div>
-      <Dialog open={!!inspectedGem} onOpenChange={(open) => !open && setInspectedGem(null)}>
+      <Dialog open={!!inspectedItem} onOpenChange={(open) => !open && setInspectedItem(null)}>
         <DialogContent className="bg-[#121212] border-gray-700 text-white max-w-sm">
-          {inspectedGem && <GemDetails gem={inspectedGem} classId={selectedClass} />}
+          {inspectedItem && <ItemDetails item={inspectedItem} classId={selectedClass} />}
         </DialogContent>
       </Dialog>
     </div>

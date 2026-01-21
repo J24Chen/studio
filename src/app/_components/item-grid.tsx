@@ -1,12 +1,12 @@
 'use client';
 
 import { ItemCard } from './item-card';
-import type { Item } from '@/lib/types';
+import type { Item, Gem } from '@/lib/types';
 
 interface ItemGridProps {
-  items: Item[];
-  onHoverItem: (item: Item) => void;
-  onClickItem: (item: Item) => void;
+  items: (Item | Gem)[];
+  onHoverItem: (item: Item | Gem) => void;
+  onClickItem: (item: Item | Gem) => void;
 }
 
 export function ItemGrid({ items, onHoverItem, onClickItem }: ItemGridProps) {

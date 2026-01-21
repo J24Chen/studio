@@ -4,8 +4,8 @@ import { useState, useMemo } from 'react';
 import { items } from '@/lib/items';
 import { gameClasses } from '@/lib/data';
 import type { Item, Tier } from '@/lib/types';
-import { ItemGrid } from './_components/item-grid';
-import { ItemDetails } from './_components/item-details';
+import { ItemGrid } from '../_components/item-grid';
+import { ItemDetails } from '../_components/item-details';
 import { Input } from '@/components/ui/input';
 import {
   Select,

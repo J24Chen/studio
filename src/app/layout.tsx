@@ -38,7 +38,11 @@ export default function RootLayout({
           <Suspense fallback={<div className="h-14 w-full border-b border-border/40" />}>
             <Header />
           </Suspense>
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <Suspense fallback={<div className="flex h-[calc(100vh-3.5rem)] bg-[#1e1e1e]" />}>
+              {children}
+            </Suspense>
+          </main>
         </div>
         <Toaster />
       </body>

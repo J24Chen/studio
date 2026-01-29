@@ -14,17 +14,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <nav className="flex items-center gap-6 text-sm">
+      <div className="container flex h-14 max-w-screen-2xl items-end">
+        <nav className="flex -mb-[1px] items-center gap-2">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                'transition-colors hover:text-foreground/80',
+                'rounded-t-md border-x border-t border-border px-6 py-2 text-lg font-medium',
                 pathname?.startsWith(item.href)
-                  ? 'text-foreground'
-                  : 'text-foreground/60'
+                  ? 'bg-[#1e1e1e] text-foreground'
+                  : 'border-b bg-secondary text-foreground/60 hover:bg-secondary/90'
               )}
             >
               {item.label}

@@ -13,28 +13,28 @@ const gemData: GemInfo[] = [
     name: 'Emerald Primary', 
     imageUrl: 'https://static.wikitide.net/rnswiki/9/96/Spr_upgrade_green_0.png', 
     tiers: {
-      wizard: 'F',
-      assassin: 'F',
-      heavyblade: 'F',
+      wizard: 'A',
+      assassin: 'B',
+      heavyblade: 'D',
       dancer: 'F',
-      druid: 'F',
+      druid: 'D',
       spellsword: 'F',
-      sniper: 'F',
-      bruiser: 'F',
-      defender: 'F',
-      ancient: 'F',
+      sniper: 'A',
+      bruiser: 'B',
+      defender: 'C',
+      ancient: 'C',
     },
     description: {
-      wizard: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      assassin: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      heavyblade: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      dancer: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      druid: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      spellsword: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      sniper: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      bruiser: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      defender: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
-      ancient: "Deals damage in a large radius around you. Deals slightly more damage (250). Decreases all other cooldowns by 2 seconds each time it's used.",
+      wizard: "Deals slightly more damage. No longer slows movement when used. Size of blast is increased.",
+      assassin: "Using this ability doesn't break [VANISH].",
+      heavyblade: "Damage (320) and radius is increased. Movement speed is slightly decreased at all times.",
+      dancer: "Damage is increased. No longer slows movement on use",
+      druid: "Damage now dealt in a small blast pointed towards your target. Deals more damage, but range is extremely short.",
+      spellsword: "Damage and range is increased. No longer consumes [DARKSPELL].",
+      sniper: "Deals more damage, but cooldown when you miss is also increased.",
+      bruiser: "Deals significantly more damage and has more range. Can no longer be charged. Now has a cooldown of X seconds and a longer GCD.",
+      defender: "Greatly slows movement on use. Charges to Secondary increased (2), and increments the counter on your Special by 3. Now has a cooldown of 5 seconds.",
+      ancient: "Deals more damage. Range and size of attack is greatly increased. Your pet no longer attacks alongside you.",
     }
   },
   { name: 'Emerald Secondary', imageUrl: 'https://static.wikitide.net/rnswiki/0/00/Spr_upgrade_green_1.png' },
@@ -63,6 +63,7 @@ export const gems: Gem[] = gemData.map((gemInfo, i) => {
   const tiers: Tier[] = ['S', 'A', 'B', 'C', 'D', 'F'];
 
   gameClasses.forEach((gc, index) => {
+    //Will be removed later, as description and tiers will be defined later
     const tier = gemInfo.tiers?.[gc.id] ?? tiers[(i + index) % tiers.length];
     const description = gemInfo.description?.[gc.id] ?? `A description for ${gemInfo.name} for the ${gc.name} class. It provides a unique bonus.`;
     

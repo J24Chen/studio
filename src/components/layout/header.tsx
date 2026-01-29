@@ -21,10 +21,10 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                'rounded-t-md border-x border-t border-border px-6 py-2 text-lg font-medium',
+                'rounded-t-md border-x border-t px-6 py-2 text-lg font-medium',
                 pathname?.startsWith(item.href)
-                  ? 'bg-[#1e1e1e] text-foreground'
-                  : 'border-b bg-secondary text-foreground/60 hover:bg-secondary/90'
+                  ? 'border-border bg-[#1e1e1e] text-foreground'
+                  : 'border-border border-b bg-secondary text-foreground/60 hover:bg-secondary/90'
               )}
             >
               {item.label}

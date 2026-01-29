@@ -3,6 +3,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Rabbit & Steel Companion',
@@ -34,7 +35,9 @@ export default function RootLayout({
         )}
       >
         <div className="relative flex min-h-screen flex-col">
-          <Header />
+          <Suspense fallback={<div className="h-14 w-full border-b border-border/40" />}>
+            <Header />
+          </Suspense>
           <main className="flex-1">{children}</main>
         </div>
         <Toaster />

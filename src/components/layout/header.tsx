@@ -8,8 +8,8 @@ export function Header() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/items', label: 'Items' },
-    { href: '/gems', label: 'Gems' },
+    { href: '/items', label: 'Items', imageUrl: 'https://static.wikitide.net/rnswiki/4/42/Spr_item_lucky_0.png' },
+    { href: '/gems', label: 'Gems', imageUrl: 'https://static.wikitide.net/rnswiki/9/96/Spr_upgrade_green_0.png' },
   ];
 
   return (
@@ -21,13 +21,15 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                'rounded-t-md px-6 py-2 text-lg font-medium',
+                'flex items-center gap-3 rounded-t-md px-4 py-2 text-lg font-medium',
                 pathname?.startsWith(item.href)
                   ? 'border-x border-t border-border bg-[#1e1e1e] text-foreground'
                   : 'border border-border bg-secondary text-foreground/60 hover:bg-secondary/90'
               )}
             >
-              {item.label}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={item.imageUrl} alt={`${item.label} icon`} className="h-6 w-6 object-contain" />
+              <span>{item.label}</span>
             </Link>
           ))}
         </nav>

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { gems } from '@/lib/gems';
 import { gameClasses } from '@/lib/data';
 import type { Gem, Tier } from '@/lib/types';
@@ -34,7 +35,19 @@ export default function GemsPage() {
   const [inspectedItem, setInspectedItem] = useState<Gem | null>(null);
   const [hoveredItem, setHoveredItem] = useState<Gem | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedClass, setSelectedClass] = useState<string>('wizard'); // Default to wizard
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const classFromUrl = searchParams.get('class');
+  const selectedClass = (classFromUrl && classFromUrl !== 'all') ? classFromUrl : 'wizard';
+
+  const handleClassChange = (value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('class', value);
+    router.push(`${pathname}?${params.toString()}`);
+  };
 
   const filteredItems = useMemo(() => {
     let filtered = [...gems].sort((a, b) => a.name.localeCompare(b.name));
@@ -82,7 +95,7 @@ export default function GemsPage() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="bg-[#2a2a2a] border-gray-600 text-white min-w-[160px]"
           />
-          <Select onValueChange={setSelectedClass} defaultValue="wizard">
+          <Select onValueChange={handleClassChange} value={selectedClass}>
             <SelectTrigger className="w-[200px] bg-[#2a2a2a] border-gray-600 text-white">
               <SelectValue placeholder="Filter by class" />
             </SelectTrigger>

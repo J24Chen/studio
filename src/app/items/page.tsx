@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { items } from '@/lib/items';
 import { gameClasses } from '@/lib/data';
 import type { Item, Tier } from '@/lib/types';
@@ -35,7 +36,17 @@ export default function ItemsPage() {
   const [inspectedItem, setInspectedItem] = useState<Item | null>(null);
   const [hoveredItem, setHoveredItem] = useState<Item | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedClass, setSelectedClass] = useState<string>('all');
+  
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const selectedClass = searchParams.get('class') || 'all';
+
+  const handleClassChange = (value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('class', value);
+    router.push(`${pathname}?${params.toString()}`);
+  };
 
   const filteredItems = useMemo(() => {
     let filtered = [...items].sort((a, b) => a.name.localeCompare(b.name));
@@ -87,7 +98,7 @@ export default function ItemsPage() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="bg-[#2a2a2a] border-gray-600 text-white min-w-[160px]"
           />
-          <Select onValueChange={setSelectedClass} defaultValue="all">
+          <Select onValueChange={handleClassChange} value={selectedClass}>
             <SelectTrigger className="w-[200px] bg-[#2a2a2a] border-gray-600 text-white">
               <SelectValue placeholder="Filter by class" />
             </SelectTrigger>

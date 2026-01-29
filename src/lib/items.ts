@@ -2996,7 +2996,7 @@ export const items: Item[] =
 {
         "name": "Talon Charm",
         "description": "Deals 150 damage to all enemies every time you move 5 rabbitleaps.",
-        "imageUrl": "static.wikitide.net/rnswiki/b/be/Spr_item_swiftflight_5.png",
+        "imageUrl": "https://static.wikitide.net/rnswiki/b/be/Spr_item_swiftflight_5.png",
         "tiers": {
 			"wizard": "C",
 			"assassin": "S",
